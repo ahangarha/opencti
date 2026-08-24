@@ -425,7 +425,9 @@ const LeftBarComponent = ({ queryRef }) => {
             flexDirection: 'column',
             overflow: 'hidden',
             background: getBackground(),
-            borderRight: '1px solid transparent',
+            left: 'unset',
+            insetInlineStart: 0,
+            borderInlineEnd: '1px solid transparent',
           },
         },
       }}

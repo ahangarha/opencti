@@ -235,7 +235,7 @@ const TopBarComponent: FunctionComponent<TopBarProps> = ({
       position="fixed"
       elevation={0}
       sx={{
-        marginLeft: navOpen ? `${OPEN_BAR_WIDTH}px` : `${SMALL_BAR_WIDTH}px`,
+        marginInlineStart: navOpen ? `${OPEN_BAR_WIDTH}px` : `${SMALL_BAR_WIDTH}px`,
         width: navOpen ? `calc(100% - ${OPEN_BAR_WIDTH}px)` : `calc(100% - ${SMALL_BAR_WIDTH}px)`,
         backgroundColor: 'transparent',
         backdropFilter: 'blur(4px)',

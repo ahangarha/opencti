@@ -25,8 +25,8 @@ const StyledDrawer = styled(Drawer)(() => ({
     overflow: 'auto',
     padding: 0,
     zIndex: 998,
-    right: 'var(--chatbot-sidebar-width, 0px)',
-    transition: 'right 225ms cubic-bezier(0.4, 0, 0.2, 1)',
+    insetInlineEnd: 'var(--chatbot-sidebar-width, 0px)',
+    transition: 'insetInlineEnd 225ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
 }));
 
@@ -97,8 +97,11 @@ const NavToolbarMenu: FunctionComponent<{ entries: MenuEntry[] }> = ({ entries }
   };
 
   const theme = useTheme<Theme>();
+
+  const isRTL = document.documentElement.dir === 'rtl';
+
   return (
-    <StyledDrawer variant="permanent" anchor="right">
+    <StyledDrawer variant="permanent" anchor={isRTL ? 'left' : 'right'}>
       <ToolbarSpacer />
       <MenuList component="nav" style={{ marginTop: bannerHeight + settingsMessagesBannerHeight + topBannerHeight, marginBottom: bannerHeight }}>
         {entries.map((entry, idx) => {
