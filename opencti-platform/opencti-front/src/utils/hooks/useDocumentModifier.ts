@@ -2,6 +2,14 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { isNotEmptyField } from '../utils';
 
+function isRTL(lang: string) {
+  const rtlLanguages = new Set([
+    'fa',
+  ]);
+
+  return rtlLanguages.has(lang);
+}
+
 export const useBaseHrefAbsolute = () => {
   const { origin } = window.location;
   const { pathname } = useLocation();
@@ -18,6 +26,7 @@ export const useDocumentLangModifier = (lang: string) => {
     const prevLang = document.documentElement.lang;
     if (prevLang !== lang) {
       document.documentElement.lang = lang;
+      document.documentElement.dir = isRTL(lang) ? 'rtl' : 'ltr';
     }
     return () => {
       document.documentElement.lang = prevLang;
