@@ -168,7 +168,14 @@ const DecayRules = () => {
   const alertContent = platformModuleHelpers.generateDisableMessage(INDICATOR_DECAY_MANAGER);
 
   return (
-    <div data-testid="decay-rules-page" style={{ margin: 0, padding: '0 200px 0 0' }}>
+    <div
+      data-testid="decay-rules-page"
+      style={{
+        margin: 0,
+        padding: 0,
+        paddingInlineEnd: '200px',
+      }}
+    >
       {!platformModuleHelpers.isIndicatorDecayManagerEnable() && alertContent && (
         <Alert
           severity="info"

@@ -84,7 +84,8 @@ const DecayRuleComponent = ({ queryRef }: DecayRuleComponentProps) => {
   return (
     <div style={{
       margin: 0,
-      padding: '0 200px 50px 0',
+      paddingBlock: '0 50px',
+      paddingInline: '0 200px',
     }}
     >
       <Breadcrumbs elements={[

@@ -16,7 +16,8 @@ import ItemCopy from '../../../components/ItemCopy';
 const useStyles = makeStyles((theme) => ({
   container: {
     margin: 0,
-    padding: `0 calc( 200px - ${theme.spacing(3)} + ${theme.spacing(1)} ) 0 0`, // 200 of menu size, 3 space from main html, 1 for correct alignment
+    padding: 0,
+    paddingInlineEnd: `calc( 200px - ${theme.spacing(3)} + ${theme.spacing(1)} )`, // 200 of menu size, 3 space from main html, 1 for correct alignment
     maxWidth: '100%',
   },
 }));

@@ -19,7 +19,8 @@ const LOCAL_STORAGE_KEY_SUB_TYPES = 'sub-types';
 const useStyles = makeStyles(() => ({
   container: {
     margin: 0,
-    padding: '0 200px 50px 0',
+    paddingBlock: '0 50px',
+    paddingInline: '0 200px',
   },
 }));
 
