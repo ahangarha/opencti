@@ -168,7 +168,7 @@ export const NarrativeLine: FunctionComponent<NarrativeLineProps> = ({
         )}
       />
       <ListItemIcon style={{ position: 'absolute', right: -10 }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );
@@ -230,7 +230,7 @@ export const NarrativeLineDummy = ({
         )}
       />
       <ListItemIcon style={{ position: 'absolute', right: -10 }}>
-        <KeyboardArrowRightOutlined color="disabled" />
+        <KeyboardArrowRightOutlined color="disabled" className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

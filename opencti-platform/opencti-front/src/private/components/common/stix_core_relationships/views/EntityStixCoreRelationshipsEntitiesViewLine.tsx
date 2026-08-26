@@ -339,7 +339,7 @@ export const EntityStixCoreRelationshipsEntitiesViewLine: FunctionComponent<
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRight />
+        <KeyboardArrowRight className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );
@@ -450,7 +450,7 @@ export const EntityStixCoreRelationshipsEntitiesLineDummy = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRight />
+        <KeyboardArrowRight className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

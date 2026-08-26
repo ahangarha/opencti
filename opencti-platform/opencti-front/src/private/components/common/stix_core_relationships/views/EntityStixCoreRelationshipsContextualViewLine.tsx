@@ -158,7 +158,7 @@ const EntityStixCoreRelationshipsContextualViewLine: FunctionComponent<
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRight />
+        <KeyboardArrowRight className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );

@@ -1,4 +1,5 @@
 import { buttonClasses } from '@mui/material/Button';
+import { Direction } from '@mui/material/styles';
 import type { ExtendedThemeOptions } from './Theme';
 import LogoText from '../static/images/logo_text_dark.svg';
 import LogoCollapsed from '../static/images/logo_dark.svg';
@@ -34,7 +35,9 @@ const ThemeDark = (
   secondary: string | null = null,
   accent: string | null = null,
   text_color = THEME_DARK_DEFAULT_TEXT,
+  direction: Direction = 'ltr',
 ): ExtendedThemeOptions => ({
+  direction,
   logo: logo || LogoText,
   logo_collapsed: logo_collapsed || LogoCollapsed,
   borderRadius: 4,

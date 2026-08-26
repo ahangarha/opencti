@@ -1,6 +1,6 @@
 import { CloseOutlined } from '@mui/icons-material';
 import { Chip, ChipProps, SxProps, Theme, Tooltip, alpha, lighten, useTheme } from '@mui/material';
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 export interface TagProps extends Omit<ChipProps, 'color'> {
   label?: string | number | ReactElement | null;
@@ -44,16 +44,13 @@ const Tag = ({
 
   const bgColor = getBackgroundColor();
 
-  const chipStyle: CSSProperties = {
+  const sxStyles: SxProps<Theme> = {
     borderRadius: 4,
     fontSize: 12,
     fontWeight: 400,
-    paddingLeft: '8px',
+    pl: '8px',
     cursor: onClick ? 'pointer' : 'default',
     textTransform: labelTextTransform,
-  };
-
-  const sxStyles: SxProps<Theme> = {
     backgroundColor: bgColor,
     '&:hover': {
       backgroundColor: onClick ? lighten(bgColor, 0.2) : undefined,
@@ -65,8 +62,8 @@ const Tag = ({
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
       display: 'block',
-      paddingLeft: icon ? '8px' : '4px',
-      paddingRight: onDelete ? '4px' : '12px',
+      paddingInline: icon ? '8px' : '4px',
+      paddingInlineEnd: onDelete ? '4px' : '12px',
       textTransform: labelTextTransform,
       '&::first-letter': {
         textTransform: labelTextTransform,
@@ -85,7 +82,7 @@ const Tag = ({
         color: '#FFFFFF',
       },
       background: 'none',
-      marginLeft: '8px',
+      ml: '8px',
     },
     ...sx,
   };
@@ -96,7 +93,6 @@ const Tag = ({
       icon={icon}
       onClick={onClick}
       onDelete={onDelete}
-      style={chipStyle}
       sx={sxStyles}
       deleteIcon={<CloseOutlined />}
       {...chipProps}

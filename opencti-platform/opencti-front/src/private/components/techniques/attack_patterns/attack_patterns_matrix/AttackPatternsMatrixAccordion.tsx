@@ -139,7 +139,7 @@ const AccordionAttackPattern = ({
               setExpanded(!expanded);
             }}
           >
-            <ArrowForwardIosSharpIcon sx={{
+            <ArrowForwardIosSharpIcon className="rtl-flip" sx={{
               fontSize: '0.9rem',
             }}
             />

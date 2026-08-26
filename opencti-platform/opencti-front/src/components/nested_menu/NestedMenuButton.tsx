@@ -326,7 +326,7 @@ const NestedMenuButton: React.FC<NestedMenuProps> = ({
                         >
                           <Typography>{option.label ?? option.value}</Typography>
                           {option.nestedOptions ? (
-                            <ChevronRight fontSize="small" />
+                            <ChevronRight fontSize="small" className="rtl-flip" />
                           ) : null}
                         </Box>
                       </MenuItem>

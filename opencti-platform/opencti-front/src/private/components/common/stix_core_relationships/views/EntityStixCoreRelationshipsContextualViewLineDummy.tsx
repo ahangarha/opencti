@@ -71,7 +71,7 @@ const EntityStixCoreRelationshipsContextualViewLineDummy = ({ dataColumns }: { d
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRight />
+        <KeyboardArrowRight className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

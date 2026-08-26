@@ -124,7 +124,7 @@ export const CountryLineComponent: FunctionComponent<CountryLineProps> = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );
@@ -181,7 +181,7 @@ export const CountryLineDummy = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined color="disabled" />
+        <KeyboardArrowRightOutlined color="disabled" className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

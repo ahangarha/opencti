@@ -24,7 +24,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   containerWrap: {
     position: 'relative',
-    paddingRight: 18,
+    paddingEnd: 18,
   },
   container: {
     position: 'relative',
@@ -34,12 +34,12 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   icon: {
     position: 'absolute',
-    right: 0,
+    insetInlineEnd: 0,
     top: -3,
   },
   iconInline: {
     position: 'absolute',
-    right: 0,
+    insetInlineEnd: 0,
     top: 0,
   },
 }));

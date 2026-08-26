@@ -182,7 +182,7 @@ const SubTypeLine: FunctionComponent<SubTypeLineProps> = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );

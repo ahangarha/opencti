@@ -127,7 +127,7 @@ export const SystemLine: FunctionComponent<SystemLineProps> = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );
@@ -200,7 +200,7 @@ export const SystemLineDummy = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

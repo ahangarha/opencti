@@ -1,6 +1,7 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import { useTheme } from '@mui/styles';
 import DangerZoneChip from '@components/common/danger_zone/DangerZoneChip';
 import { truncate } from '../utils/String';
@@ -22,14 +23,13 @@ const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({ elements, noMargin =
   const theme = useTheme<Theme>();
 
   const SplitDiv = ({ show = true }) => (
-    <div
-      style={{
+    <Box
+      sx={{
         display: show ? 'none' : 'unset',
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
+        mx: 1,
       }}
     >/
-    </div>
+    </Box>
   );
 
   return (

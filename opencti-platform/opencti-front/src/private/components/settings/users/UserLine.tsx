@@ -139,7 +139,7 @@ const UserLineComponent: React.FC<UserLineComponentProps> = (props) => {
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );
@@ -279,7 +279,7 @@ export const UserLineDummy: React.FC<Pick<UserLineComponentProps, 'dataColumns'>
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

@@ -27,11 +27,10 @@ const DataTableLineDummy = () => {
   return (
     <div style={{ display: 'flex' }}>
       {columns.filter((c) => c.visible).map((column) => (
-        <div
+        <Box
           key={column.id}
-          style={{
-            paddingLeft: theme.spacing(0.5),
-            paddingRight: theme.spacing(1),
+          sx={{
+            px: 0.5,
             flex: '0 0 auto',
             width: column.percentWidth
               ? Math.round(tableWidth * (column.percentWidth / 100))
@@ -39,7 +38,7 @@ const DataTableLineDummy = () => {
           }}
         >
           <Skeleton variant="text" height={35} />
-        </div>
+        </Box>
       ))}
     </div>
   );
@@ -61,16 +60,6 @@ const DataTableCell = ({
   const { useDataCellHelpers, tableWidthState: [tableWidth] } = useDataTableContext();
   const helpers = useDataCellHelpers(cell);
 
-  const cellStyle: CSSProperties = {
-    display: 'flex',
-    paddingLeft: theme.spacing(1),
-    paddingRight: theme.spacing(1),
-    width: '100%',
-    alignItems: 'center',
-    gap: theme.spacing(0.5),
-    fontSize: '13px',
-  };
-
   return (
     <div
       key={`${cell.id}_${data.id}`}
@@ -79,9 +68,9 @@ const DataTableCell = ({
         width: Math.round(tableWidth * (cell.percentWidth / 100)),
       }}
     >
-      <div style={cellStyle}>
+      <Box sx={{ display: 'flex', px: 1, width: '100%', alignItems: 'center', gap: 0.5, fontSize: '13px' }}>
         {cell.render?.(data, helpers) ?? (<div>-</div>)}
-      </div>
+      </Box>
     </div>
   );
 };
@@ -251,7 +240,7 @@ const DataTableLine = ({
             {actions && actions(data)}
             {endsWithNavigate && (
               <IconButton aria-label={t_i18n('Open link')} onClick={() => (link ? navigate(link) : undefined)}>
-                <KeyboardArrowRightOutlined />
+                <KeyboardArrowRightOutlined className="rtl-flip" />
               </IconButton>
             )}
           </div>

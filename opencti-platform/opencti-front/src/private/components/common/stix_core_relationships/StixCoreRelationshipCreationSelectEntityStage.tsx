@@ -233,7 +233,7 @@ const StixCoreRelationshipCreationSelectEntityStage: FunctionComponent<
         }}
       >
         {t_i18n('Continue')}
-        <ChevronRightOutlined />
+        <ChevronRightOutlined className="rtl-flip" />
       </Fab>
     </div>
   );

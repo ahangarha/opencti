@@ -133,7 +133,7 @@ const MarkdownImagePreviewModal: FunctionComponent<MarkdownImagePreviewModalProp
                     },
                   }}
                 >
-                  {next ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+                  {next ? <KeyboardArrowRight className="rtl-flip" /> : <KeyboardArrowLeft className="rtl-flip" />}
                 </IconButton>
               );
             }}

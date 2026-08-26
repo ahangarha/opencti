@@ -81,7 +81,7 @@ const NarrativeWithSubnarrativeLine: FunctionComponent<NarrativeWithSubnarrative
           )}
         />
         <ListItemIcon style={{ position: 'absolute', right: -10 }}>
-          <KeyboardArrowRightOutlined />
+          <KeyboardArrowRightOutlined className="rtl-flip" />
         </ListItemIcon>
       </ListItemButton>
       {subNarratives && subNarratives.length > 0 && (
@@ -109,7 +109,7 @@ export const NarrativeWithSubnarrativeLineDummy: FunctionComponent = () => {
         }
       />
       <ListItemIcon style={{ position: 'absolute', right: -10 }}>
-        <KeyboardArrowRightOutlined color="disabled" />
+        <KeyboardArrowRightOutlined color="disabled" className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

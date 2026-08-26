@@ -35,8 +35,7 @@ const useStyles = makeStyles<MuiTheme, { column: DataTableColumn }>((theme) => c
     },
   },
   label: {
-    paddingLeft: theme.spacing(1),
-    paddingRight: theme.spacing(1),
+    paddingInline: theme.spacing(1),
     display: 'flex',
     alignItems: 'center',
     whiteSpace: 'nowrap',
@@ -48,11 +47,10 @@ const useStyles = makeStyles<MuiTheme, { column: DataTableColumn }>((theme) => c
   draggable: {
     position: 'absolute',
     top: '8px',
-    right: 3,
+    insetInlineEnd: 3,
     height: theme.spacing(4),
     width: 10,
-    paddingLeft: 4,
-    paddingRight: 4,
+    paddingInline: 4,
     backgroundClip: 'content-box',
     borderRadius: 2,
     cursor: 'col-resize',

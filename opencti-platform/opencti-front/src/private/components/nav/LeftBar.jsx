@@ -807,7 +807,7 @@ const LeftBarComponent = ({ queryRef }) => {
         >
           <LeftBarItem
             {...itemProps}
-            icon={navOpen ? <ChevronLeft /> : <ChevronRight />}
+            icon={navOpen ? <ChevronLeft className="rtl-flip" /> : <ChevronRight className="rtl-flip" />}
             label={t_i18n('Collapse')}
             onClick={handleToggle}
           />

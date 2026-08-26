@@ -85,7 +85,7 @@ class SectorLineComponent extends Component {
             )}
           />
           <ListItemIcon classes={{ root: classes.goIcon }}>
-            <KeyboardArrowRightOutlined />
+            <KeyboardArrowRightOutlined className="rtl-flip" />
           </ListItemIcon>
         </ListItemButton>
         {subSectors && subSectors.length > 0 && (
@@ -145,7 +145,7 @@ class SectorLineDummyComponent extends Component {
           )}
         />
         <ListItemIcon classes={{ root: classes.goIcon }}>
-          <KeyboardArrowRightOutlined />
+          <KeyboardArrowRightOutlined className="rtl-flip" />
         </ListItemIcon>
       </ListItem>
     );

@@ -144,7 +144,7 @@ const EntitiesStixDomainObjectLineComponent = ({
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRight />
+        <KeyboardArrowRight className="rtl-flip" />
       </ListItemIcon>
     </ListItemButton>
   );
@@ -473,7 +473,7 @@ export const EntitiesStixDomainObjectLineDummy = ({ dataColumns }) => {
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRight />
+        <KeyboardArrowRight className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

@@ -1,6 +1,6 @@
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent, useContext, useMemo } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, Direction, ThemeProvider } from '@mui/material/styles';
 import { ThemeOptions } from '@mui/material/styles/createTheme';
 import themeDark, {
   THEME_DARK_DEFAULT_ACCENT,
@@ -14,6 +14,9 @@ import themeLight from './ThemeLight';
 import { useDocumentFaviconModifier, useDocumentThemeModifier } from '../utils/hooks/useDocumentModifier';
 import { AppThemeProvider_settings$data } from './__generated__/AppThemeProvider_settings.graphql';
 import { useExportTheme } from '../utils/ExportThemeContext';
+import { UserContext } from '../utils/hooks/useAuth';
+import { isRtlLanguage } from '../utils/rtl';
+import RtlProvider from './RtlProvider';
 
 interface AppThemeProviderProps {
   children: React.ReactNode;
@@ -37,6 +40,7 @@ interface AppThemeType {
 
 const themeBuilder = (
   theme: AppThemeType,
+  direction: Direction = 'ltr',
 ) => {
   const platformThemeLogo = theme?.theme_logo ?? null;
   const platformThemeLogoCollapsed = theme?.theme_logo_collapsed ?? null;
@@ -59,6 +63,7 @@ const themeBuilder = (
       platformThemeSecondary,
       platformThemeAccent,
       platformThemeTextColor,
+      direction,
     );
   }
   return themeDark(
@@ -71,6 +76,7 @@ const themeBuilder = (
     platformThemeSecondary,
     platformThemeAccent,
     platformThemeTextColor,
+    direction,
   );
 };
 
@@ -95,6 +101,9 @@ const AppThemeProvider: FunctionComponent<AppThemeProviderProps> = ({
 }) => {
   useDocumentFaviconModifier(settings?.platform_favicon);
 
+  const { locale } = useContext(UserContext);
+  const direction: Direction = isRtlLanguage(locale.split('-')[0]) ? 'rtl' : 'ltr';
+
   const { exportTheme } = useExportTheme();
   const themeToUse = exportTheme ?? activeTheme ?? settings.platform_theme;
 
@@ -112,8 +121,8 @@ const AppThemeProvider: FunctionComponent<AppThemeProviderProps> = ({
       theme_secondary: themeToUse?.theme_secondary ?? defaultTheme.theme_secondary,
       theme_text_color: themeToUse?.theme_text_color ?? defaultTheme.theme_text_color,
     };
-    return createTheme(themeBuilder(appTheme) as ThemeOptions);
-  }, [themeToUse]);
+    return createTheme(themeBuilder(appTheme, direction) as ThemeOptions);
+  }, [themeToUse, direction]);
 
   // Compute the lowercase palette mode used by the body `data-theme`
   // attribute. This must match `theme.palette.mode` so that CSS files
@@ -122,7 +131,11 @@ const AppThemeProvider: FunctionComponent<AppThemeProviderProps> = ({
   const themeMode = (themeToUse?.name ?? defaultTheme.name) === 'Light' ? 'light' : 'dark';
   useDocumentThemeModifier(themeMode);
 
-  return <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>;
+  return (
+    <RtlProvider>
+      <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>
+    </RtlProvider>
+  );
 };
 
 export const ConnectedThemeProvider = createFragmentContainer(

@@ -74,7 +74,7 @@ const CaseTemplateLineDummy: FunctionComponent<CaseTemplateLineDummyProps> = ({ 
         )}
       />
       <ListItemIcon classes={{ root: classes.goIcon }}>
-        <KeyboardArrowRightOutlined />
+        <KeyboardArrowRightOutlined className="rtl-flip" />
       </ListItemIcon>
     </ListItem>
   );

@@ -152,3 +152,15 @@ input[type="file"] {
 .paper-for-grid {
   height: calc(100% - 25px); /* H4 size + 10 margin in MOST case, should be override sometimes */
 }
+
+/*
+ * RTL Icon Flip Utility
+ * Icons with class "rtl-flip" will be horizontally flipped when dir="rtl" is set on <html>.
+ * Usage in MUI: <ChevronRight className="rtl-flip" />
+ *
+ * NOTE: The stylis-plugin-rtl does NOT flip SVG icons or transform properties.
+ * Each directional icon must opt-in by adding the "rtl-flip" class.
+ */
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
