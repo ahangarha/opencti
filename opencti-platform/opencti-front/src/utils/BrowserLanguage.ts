@@ -2,6 +2,7 @@ export const LANGUAGES: Record<string, string> = {
   AUTO: 'auto',
   CHINESE: 'zh-cn',
   ENGLISH: 'en-us',
+  PERSIAN: 'fa-ir',
   FRENCH: 'fr-fr',
   GERMAN: 'de-de',
   ITALIAN: 'it-it',
@@ -29,6 +30,7 @@ const browserLanguagePropertyKeys = [
 const availableLanguages: string[] = [
   LANGUAGES.CHINESE,
   LANGUAGES.ENGLISH,
+  LANGUAGES.PERSIAN,
   LANGUAGES.FRENCH,
   LANGUAGES.GERMAN,
   LANGUAGES.ITALIAN,
