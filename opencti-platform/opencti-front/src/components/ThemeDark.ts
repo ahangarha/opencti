@@ -257,7 +257,7 @@ const ThemeDark = (
       fontFamily: '"Geologica", sans-serif',
       color: text_color,
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -269,7 +269,7 @@ const ThemeDark = (
       fontFamily: '"Geologica", sans-serif',
       color: text_color,
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -281,7 +281,7 @@ const ThemeDark = (
       fontFamily: '"Geologica", sans-serif',
       color: text_color,
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -293,7 +293,7 @@ const ThemeDark = (
       fontWeight: 500,
       color: text_color,
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -303,7 +303,7 @@ const ThemeDark = (
       color: text_color,
       fontFamily: '"Geologica", sans-serif',
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -313,7 +313,7 @@ const ThemeDark = (
       color: text_color,
       fontFamily: '"Geologica", sans-serif',
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -322,7 +322,7 @@ const ThemeDark = (
       fontSize: 18,
       color: text_color,
       textTransform: 'lowercase',
-      '&::first-letter': {
+      '[dir="ltr"] &::first-letter': {
         textTransform: 'uppercase',
       },
     },
@@ -452,7 +452,7 @@ const ThemeDark = (
         },
         popper: {
           textTransform: 'lowercase',
-          '&::first-letter': {
+          '[dir="ltr"] &::first-letter': {
             textTransform: 'uppercase',
           },
         },
@@ -668,13 +668,13 @@ const ThemeDark = (
         root: {
           color: text_color,
           textTransform: 'lowercase',
-          '&::first-letter': {
+          '[dir="ltr"] &::first-letter': {
             textTransform: 'uppercase',
           },
         },
         label: {
           textTransform: 'lowercase',
-          '&::first-letter': {
+          '[dir="ltr"] &::first-letter': {
             textTransform: 'uppercase',
           },
         },
@@ -685,7 +685,7 @@ const ThemeDark = (
         root: {
           textTransform: 'lowercase',
           display: 'inline-block',
-          '&::first-letter': {
+          '[dir="ltr"] &::first-letter': {
             textTransform: 'uppercase',
           },
         },
